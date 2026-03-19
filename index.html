@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>proyecto comunitario</title>
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #000; 
+}
+
+.contenedor {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "menu content"
+    "footer footer";
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 10px;
+  min-height: 100vh;
+  padding: 10px;
+}
+
+/* ÁREAS */
+.header {
+  grid-area: header;
+  background: #450000;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.menu {
+  grid-area: menu;
+  background: #563210;
+  padding: 20px;
+  display: flex; 
+  flex-direction: column; 
+  gap: 10px; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.content {
+  grid-area: content;
+  background: #563210;
+  padding: 20px;
+}
+
+.footer {
+  grid-area: footer;
+  background: #450000;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  width: 100%; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 10px; 
+  align-items: center; 
+}
+
+.menu li {
+  margin: 0;
+  width: 100%; 
+  text-align: center; 
+}
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    text-decoration: none; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    font-weight: bold; 
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+</style>
+</head>
+<body>
+<div class="contenedor">
+  <header class="header">
+    <h1>"ENFERMEDADES, DAÑOS Y PREVENCIÓN"</h1>
+  </header>
+  <nav class="menu">
+    <ul>
+      <li><a href="diabetes.html" class="glow-on-hover">DIABETES</a></li>
+      <li><a href="hipertension.html" class="glow-on-hover">PRESIÓN ARTERIAL</a></li>
+      <li><a href="habitosc.html" class="glow-on-hover">HÁBITOS SALUDABLES</a></li>
+      <li><a href="pseudoa.html" class="glow-on-hover">PSEUDO ALIMENTOS</a></li>
+      <li><a href="alimentoss.html" class="glow-on-hover">ALIMENTOS SALUDABLES</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <h2>ENFERMEDADES CRONICO DEGENERATIVAS Y VIDA SALUDABLE</h2>
+    <H3>Las enfermedades crónico-degenerativas, como la diabetes tipo 2 y la hipertensión, son provocadas en gran medida por estilos de vida inactivos y el consumo de ultraprocesados. Evitar pseudoalimentos (altos en sodio, azúcar y grasas trans) y adoptar una dieta rica en alimentos naturales, frutas y verduras, es esencial para prevenirlas o controlarlas. </H3>
+  </main>
+
+  <footer class="footer">
+    <p>© Enfermedades</p>
+  </footer>
+</div>
+</body>
+</html>
